@@ -17,9 +17,10 @@ else {
 // }
 
 function playRound(playerSelection, computerSelection) {
-    console.log(`Computer chose ${computerSelection}`)
     playerSelection = playerSelection.charAt(0).toUpperCase()
     + playerSelection.slice(1).toLowerCase();
+    console.log(`Player chose: ${playerSelection}`);
+    console.log(`Computer chose: ${computerSelection}`)
     // console.log(`formated player selection is: ${playerSelection}`);
     if (playerSelection === computerSelection){
         return "Draw!";
@@ -34,9 +35,18 @@ function playRound(playerSelection, computerSelection) {
     }
     }
     
+function game(){
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt(`Round ${i+1}: Throw Rock, Paper, or Scissors`);
+        // console.log(`Player chose: ${playerSelection}`);
+        const computerSelection = computerPlay();
+        console.log(`Round ${i+1}: ${playRound(playerSelection, computerSelection)}`);
+     }
+}
 
+game();
 // playerSelection = prompt("Throw Rock, Paper, or Scissors");
 // console.log(`Player chose ${playerSelection}`);
-const playerSelection = "rock";
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+// const playerSelection = "rock";
+// const computerSelection = computerPlay();
+// console.log(playRound(playerSelection, computerSelection));
